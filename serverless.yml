@@ -1,0 +1,22 @@
+	
+service: ffmpeg-layer
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: eu-central-1
+
+layers:
+  ffmpeg:
+    path: layer
+    allowedAccounts:
+      - '*' # ALL accounts!
+
+resources:
+  Outputs:
+    FfmpegLayerExport:
+        Value:
+          Ref: FfmpegLambdaLayer
+        Export:
+          Name: FfmpegLambdaLayer
