@@ -1,5 +1,5 @@
 	
-service: ffmpeg-layer
+service: ffmpeg-layer-sls
 
 provider:
   name: aws
